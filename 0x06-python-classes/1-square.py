@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Represents declaretion of a class"""
-  class Square:
+
+
+class Square:
     """Represents a square.
     Private instance attribute: size.
     Instantiation with size (no type/value verification).
