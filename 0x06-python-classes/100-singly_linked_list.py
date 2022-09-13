@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-
-
+"""Represents declaretion of a class"""
 class Node:
     """Node of a singly linked list.
     Private instance attribute: data:
