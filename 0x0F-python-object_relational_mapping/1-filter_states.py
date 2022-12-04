@@ -1,35 +1,19 @@
 #!/usr/bin/python3
-"""
-SelectStates module
-"""
+"""Lists all states starting with N"""
+
 import MySQLdb
-import sys
-
-
-def filter_states():
-    """Filters states from database"""
-
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    db = MySQLdb.connect(host='localhost',
-                         port=3306,
-                         user=username,
-                         passwd=password,
-                         db=database
-                         )
-    cur = db.cursor()
-    cur.execute("SELECT *\
-                FROM states\
-                WHERE name LIKE BINARY 'N%'\
-                ORDER BY id ASC"
-                )
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
-    cur.close()
-    db.close()
+from sys import argv
 
 if __name__ == "__main__":
-    filter_states()
+    conn = MySQLdb.connect(host="localhost", port=3306, charset="utf8",
+                           user=argv[1], passwd=argv[2], db=argv[3])
+    cur = conn.cursor()
+    cur.execute("""
+SELECT * FROM states ORDER BY states.id ASC
+""")
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        if row[1].startswith("N"):
+            print(row)
+    cur.close()
+    conn.close()
