@@ -1,3 +1,1 @@
-##JavaScript - Warm up##
-
-This is the  first javascript projct on  ALX SE programe
+## 0x12-javascript-warm_up

@@ -1,10 +1,10 @@
 #!/usr/bin/node
-let s;
+let argt;
 if (process.argv.length < 3) {
-  s = 'No argument';
+  argt = 'No argument';
 } else if (process.argv.length === 3) {
-  s = 'Argument found';
+  argt = 'Argument found';
 } else {
-  s = 'Arguments found';
+  argt = 'Arguments found';
 }
-console.log(s);
+console.log(argt);
