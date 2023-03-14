@@ -1,9 +1,7 @@
 #!/usr/bin/node
-// Checked Rectangle Class
 class Rectangle {
   constructor (w, h) {
-    if ((w = parseInt(w)) > 0 &&
-        (h = parseInt(h)) > 0) {
+    if ((w > 0) && (h > 0)) {
       this.width = w;
       this.height = h;
     }
